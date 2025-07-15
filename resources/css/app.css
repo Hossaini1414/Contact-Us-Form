@@ -1,0 +1,79 @@
+@import 'tailwindcss';
+@import "@fortawesome/fontawesome-free/css/all.min.css";
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+   --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+      'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+input[type="checkbox"] {
+   position: absolute;
+   opacity: 0;
+   width: 0;
+   height: 0;
+}
+
+.custom-checkbox {
+   display: inline-block;
+   width: 18px;
+   height: 18px;
+   border: 1px solid #ccc;
+   border-radius: 3px;
+   background-color: white;
+   position: relative;
+   cursor: pointer;
+   flex-shrink: 0;
+}
+
+@media (min-width:768px) {
+   .custom-checkbox {
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      border: 2px solid #ccc;
+      border-radius: 5px;
+      background-color: white;
+      position: relative;
+      cursor: pointer;
+      flex-shrink: 0;
+   }
+}
+
+input[type="checkbox"]:checked+.custom-checkbox {
+   background-color: #eb9425;
+   border-color: #eb9425;
+}
+
+.custom-checkbox::after {
+   content: " ";
+   position: absolute;
+   left: 5px;
+   top: 1px;
+   width: 6px;
+   height: 12px;
+   border: solid white;
+   border-width: 0 2px 2px 0;
+   transform: rotate(45deg);
+}
+
+@media (min-width:768px) {
+   .custom-checkbox::after {
+      content: " ";
+      position: absolute;
+      left: 7px;
+      top: 1px;
+      width: 7px;
+      height: 14px;
+      border: solid white;
+      border-width: 0 3px 3px 0;
+      transform: rotate(45deg);
+   }
+}
+
+input[type="checkbox"]:checked+.custom-checkbox::after {
+   display: block;
+}
