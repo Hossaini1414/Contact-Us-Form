@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: laravel-on-render
+    env: docker
+    branch: main
+    plan: free
+    dockerfilePath: ./Dockerfile
